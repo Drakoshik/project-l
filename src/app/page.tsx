@@ -90,13 +90,13 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="rounded-full bg-accent px-6 py-3 font-medium text-background transition hover:shadow-[0_0_24px_-4px_var(--turquoise)]"
+              className="inline-flex items-center justify-center rounded-full border border-accent bg-accent px-6 py-3 font-medium text-background transition hover:shadow-[0_0_24px_-4px_var(--turquoise)]"
             >
               Get in touch
             </a>
             <a
               href="#experience"
-              className="rounded-full border border-accent-2/60 px-6 py-3 font-medium transition hover:bg-accent-2/20"
+              className="inline-flex items-center justify-center rounded-full border border-accent-2/60 px-6 py-3 font-medium transition hover:bg-accent-2/20"
             >
               See experience
             </a>
