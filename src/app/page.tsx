@@ -1,3 +1,5 @@
+import Image from "next/image";
+import dragon from "../../public/icon.svg";
 import { Section } from "@/components/Section";
 import { StackIcon } from "@/components/StackIcon";
 import {
@@ -10,6 +12,11 @@ import {
   profile,
   skills,
 } from "@/content";
+
+const initials = profile.name
+  .split(" ")
+  .map((w) => w[0])
+  .join("");
 
 const nav = [
   { id: "about", label: "About" },
@@ -25,11 +32,6 @@ const stats = [
   { value: "AI", label: "agents in daily work" },
   { value: "B2", label: "English" },
 ];
-
-const initials = profile.name
-  .split(" ")
-  .map((w) => w[0])
-  .join("");
 
 const contactIcons: Record<string, React.ReactNode> = {
   Email: <path d="M3 6h18v12H3zM3 6l9 7 9-7" />,
@@ -51,12 +53,16 @@ export default function Home() {
 
       <header className="sticky top-0 z-20 border-b border-white/5 bg-background/70 backdrop-blur-md">
         <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a
-            href="#top"
-            className="grid size-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-background"
-            aria-label="Back to top"
-          >
-            {initials}
+          <a href="#top" className="group flex shrink-0 items-center gap-2.5" aria-label="Back to top">
+            <Image
+              src={dragon}
+              alt=""
+              width={40}
+              height={40}
+              priority
+              className="transition group-hover:scale-105"
+            />
+            <span className="text-lg font-bold tracking-wider">{initials}</span>
           </a>
           <ul className="-mr-2 flex gap-1 overflow-x-auto text-sm text-muted">
             {nav.map((n) => (
