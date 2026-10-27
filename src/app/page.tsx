@@ -14,9 +14,9 @@ const nav = [
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 z-10 border-b border-white/5 bg-background/80 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-accent-2/30 bg-background/80 backdrop-blur">
         <nav className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
-          <a href="#top" className="font-semibold">
+          <a href="#top" className="font-semibold text-accent">
             {profile.name.split(" ")[0]}
           </a>
           <ul className="hidden gap-6 text-sm text-muted sm:flex">
@@ -33,9 +33,10 @@ export default function Home() {
 
       <main id="top" className="mx-auto max-w-4xl px-4 sm:px-6">
         {/* Hero */}
-        <section className="py-24 sm:py-32">
+        <section className="relative isolate py-24 sm:py-32">
+          <div aria-hidden className="pointer-events-none absolute -top-10 left-1/2 -z-10 h-72 w-[min(40rem,100%)] -translate-x-1/2 rounded-full bg-accent-2/25 blur-3xl" />
           <p className="mb-3 text-sm text-accent">{profile.role}</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">{profile.name}</h1>
+          <h1 className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">{profile.name}</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">{profile.tagline}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
@@ -47,7 +48,7 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="rounded-lg border border-white/15 px-5 py-3 font-medium hover:border-white/40"
+              className="rounded-lg border border-accent-2 px-5 py-3 font-medium hover:bg-accent-2/20"
             >
               Contact me
             </a>
@@ -66,10 +67,10 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2">
             {skills.map((s) => (
               <div key={s.group} className="rounded-xl bg-surface p-5">
-                <h3 className="mb-3 font-medium">{s.group}</h3>
+                <h3 className="mb-3 font-medium text-accent">{s.group}</h3>
                 <ul className="flex flex-wrap gap-2">
                   {s.items.map((i) => (
-                    <li key={i} className="rounded-md bg-white/5 px-2.5 py-1 text-sm text-muted">
+                    <li key={i} className="rounded-md bg-accent-2/20 px-2.5 py-1 text-sm text-foreground">
                       {i}
                     </li>
                   ))}
@@ -80,10 +81,10 @@ export default function Home() {
         </Section>
 
         <Section id="experience" title="Experience">
-          <ol className="space-y-8 border-l border-white/10 pl-6">
+          <ol className="space-y-8 border-l-2 border-accent-2/60 pl-6">
             {experience.map((e) => (
               <li key={`${e.company}-${e.period}`}>
-                <p className="text-sm text-muted">{e.period}</p>
+                <p className="text-sm text-accent">{e.period}</p>
                 <h3 className="font-medium">
                   {e.role} · {e.company}
                 </h3>

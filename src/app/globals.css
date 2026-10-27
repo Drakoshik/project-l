@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
-/* Dark theme only */
+/* Palette: Carbon Black, Alabaster Grey, Turquoise, Royal Violet */
 :root {
-  --background: #0b0d12;
-  --surface: #151924;
-  --foreground: #e6e8ee;
-  --muted: #8b93a7;
-  --accent: #7c9cff;
+  --carbon-black: #1c1e22;
+  --alabaster-grey: #e3e4df;
+  --turquoise: #3dd6c6;
+  --royal-violet: #6b46c1;
+
+  --background: var(--carbon-black);
+  --surface: #26292e;
+  --foreground: var(--alabaster-grey);
+  --muted: #a3a59f;
+  --accent: var(--turquoise);
+  --accent-2: var(--royal-violet);
   color-scheme: dark;
 }
 
@@ -16,6 +22,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -27,4 +34,9 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+::selection {
+  background: var(--royal-violet);
+  color: var(--alabaster-grey);
 }
