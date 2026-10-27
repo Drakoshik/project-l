@@ -5,7 +5,6 @@ export const profile = {
   role: "Data Analyst · Unity / Fullstack Developer",
   tagline:
     "Data analyst with a software development background: 4 years of commercial development and the last six months in data analytics.",
-  cvPdf: "/M.Koptiaev_CV_ENG.pdf", // file lives in public/
 };
 
 export const about = [
