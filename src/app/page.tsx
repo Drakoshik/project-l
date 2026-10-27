@@ -1,5 +1,14 @@
 import { Section } from "@/components/Section";
-import { about, contacts, experience, profile, projects, skills } from "@/content";
+import {
+  about,
+  contacts,
+  education,
+  experience,
+  keySkills,
+  languages,
+  profile,
+  skills,
+} from "@/content";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -7,7 +16,7 @@ const nav = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
+  { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -61,9 +70,18 @@ export default function Home() {
               <p key={p}>{p}</p>
             ))}
           </div>
+          <h3 className="mt-10 mb-4 font-medium text-accent">Key skills</h3>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {keySkills.map((k) => (
+              <li key={k} className="flex gap-3 rounded-xl bg-surface p-4 text-sm text-muted">
+                <span aria-hidden className="mt-1.5 size-2 shrink-0 rounded-full bg-accent-2" />
+                {k}
+              </li>
+            ))}
+          </ul>
         </Section>
 
-        <Section id="skills" title="Skills">
+        <Section id="skills" title="Tools & Stack">
           <div className="grid gap-4 sm:grid-cols-2">
             {skills.map((s) => (
               <div key={s.group} className="rounded-xl bg-surface p-5">
@@ -98,19 +116,30 @@ export default function Home() {
           </ol>
         </Section>
 
-        <Section id="projects" title="Projects">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {projects.map((p) => (
-              <a
-                key={p.title}
-                href={p.href}
-                className="rounded-xl bg-surface p-5 transition hover:ring-1 hover:ring-accent/50"
+        <Section id="education" title="Education">
+          <ul className="space-y-4">
+            {education.map((e) => (
+              <li
+                key={e.title}
+                className="flex flex-col gap-1 rounded-xl bg-surface p-5 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
               >
-                <h3 className="font-medium">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted">{p.description}</p>
-              </a>
+                <div>
+                  <h3 className="font-medium">{e.title}</h3>
+                  <p className="text-sm text-muted">{e.place}</p>
+                </div>
+                <p className="shrink-0 text-sm text-accent">{e.period}</p>
+              </li>
             ))}
-          </div>
+          </ul>
+          <h3 className="mt-10 mb-4 font-medium text-accent">Languages</h3>
+          <ul className="flex flex-wrap gap-3">
+            {languages.map((l) => (
+              <li key={l.name} className="rounded-xl bg-surface px-4 py-3">
+                <span className="font-medium">{l.name}</span>
+                <span className="ml-2 rounded-md bg-accent-2/20 px-2 py-0.5 text-sm">{l.level}</span>
+              </li>
+            ))}
+          </ul>
         </Section>
 
         <Section id="contact" title="Contact">
