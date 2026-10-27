@@ -83,10 +83,7 @@ export default function Home() {
             {profile.role}
           </p>
           <h1 className="mt-6 text-5xl font-bold tracking-tight sm:text-7xl">
-            {profile.name.split(" ")[0]}{" "}
-            <span className="bg-gradient-to-r from-accent to-accent-2-soft bg-clip-text text-transparent">
-              {profile.name.split(" ").slice(1).join(" ")}
-            </span>
+            {profile.name}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{profile.tagline}</p>
           <div className="mt-10 flex flex-wrap gap-3">
