@@ -151,9 +151,9 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {skills.map((s) => (
               <div key={s.group} className="card p-6">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <h3 className="text-lg font-semibold">{s.group}</h3>
+                <div className="mb-4 flex items-center gap-3">
                   <StackIcon group={s.group} />
+                  <h3 className="text-lg font-semibold">{s.group}</h3>
                 </div>
                 <ul className="flex flex-wrap gap-2">
                   {s.items.map((i) => (
